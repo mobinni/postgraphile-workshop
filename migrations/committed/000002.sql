@@ -1,5 +1,5 @@
 --! Previous: sha1:dac91a09ad9977583f4541b014872ea4ca5ec4a6
---! Hash: sha1:e39b1582d850d878942dcb4d2fa96996ed989971
+--! Hash: sha1:109944eb6d8ea04d2ba232e56cc784dae1b0618d
 
 -- Enter migration here
 DROP TABLE IF EXISTS app_public.activities;
@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS app_public.activities
 
 comment on table app_public.activities is $$
   @interface mode:single type:type
-  @type prepaid name:SpendActivityDetails attributes:spend_merchant
-  @type prepaid name:SpendActivityDetails attributes:fx_rate
+  @type prepaid name:SpendActivityDetails attributes:spend_merchant,fx_rate
   @type p2p_payment name:P2PActivityDetails attributes:p2p_handle
 $$;
