@@ -1,7 +1,7 @@
 do
 $$
     begin
-        for r in 0..10
+        for r in 0..1000
             loop
                 insert into "app_public".activities(canonical_id,
                                                     account_id,
@@ -9,16 +9,14 @@ $$
                                                     currency,
                                                     type,
                                                     occurred_at,
-                                                    spend_merchant,
-                                                    fx_rate)
+                                                    p2p_handle)
                 values (gen_random_uuid(),
-                        'account-123',
+                        'account-122',
                         random() * 100,
                         'CAD',
-                        'spend',
+                        'p2p_payment',
                         (select NOW() + (random() * (NOW() + '10 days' - NOW()))),
-                        'costco',
-                        1.36);
+                        'no_mo');
             end loop;
     end;
 $$;

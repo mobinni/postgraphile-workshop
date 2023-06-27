@@ -16,12 +16,12 @@ export const preset: GraphileConfig.Preset = {
     makePgService({
       connectionString: process.env.DATABASE_URL,
       schemas: ["app_public"],
-      // pgSettings: (req: any) => {
-      //   return {
-      //     role: 'client',
-      //     'user.account_ids': ['account-123'].toString(),
-      //   };
-      // },
+      pgSettings: (req: any) => {
+        return {
+          role: 'client',
+          'user.account_ids': ['account-123'].toString(),
+        };
+      },
     }),
   ],
   gather: {
