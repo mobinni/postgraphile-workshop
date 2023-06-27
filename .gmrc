@@ -1,0 +1,11 @@
+{
+  "pgSettings": {
+    "search_path": "app_public,app_hidden,app_private,public"
+  },
+  "afterAllMigrations": [
+    {
+      "_": "command",
+      "command": "pg_dump --schema-only --no-owner --exclude-schema=graphile_migrate --exclude-schema=postgraphile_watch \"$GM_DBURL\""
+    },
+  ]
+}

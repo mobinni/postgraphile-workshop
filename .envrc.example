@@ -1,0 +1,2 @@
+export DATABASE_URL="http://localhost:5432/postgraphile-workshop";
+export I_SPONSOR_GRAPHILE="and_acknowledge_prerelease_caveats";

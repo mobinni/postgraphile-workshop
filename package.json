@@ -1,0 +1,40 @@
+{
+  "name": "postgraphile-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "export": "ts-node src/schema-export.ts",
+    "migrate": "graphile-migrate migrate",
+    "migrate:commit": "graphile-migrate commit",
+    "migrate:uncommit": "graphile-migrate uncommit",
+    "migrate:drop": "ts-node ./scripts/drop-database.ts",
+    "migrate:reset": "graphile-migrate reset --erase",
+    "migrate:watch": "graphile-migrate watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobinni/postgraphile-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mobinni/postgraphile-workshop/issues"
+  },
+  "homepage": "https://github.com/mobinni/postgraphile-workshop#readme",
+  "dependencies": {
+    "graphile-export": "^0.0.2-0.2",
+    "graphile-migrate": "^1.4.1",
+    "koa": "^2.14.2",
+    "postgraphile": "^5.0.0-alpha.11"
+  },
+  "devDependencies": {
+    "@babel/traverse": "^7.22.5",
+    "@types/koa": "^2.13.6",
+    "prettier": "^2.8.8",
+    "prettier-plugin-sql": "^0.14.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
